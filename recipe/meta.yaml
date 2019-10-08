@@ -1,0 +1,26 @@
+package:
+  name: cpr-standalone
+  version: 0.1.0
+
+source:
+  - path: ./
+  - git_url: https://github.com/conda/conda-prefix-replacement
+    folder: cpr_src
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - python
+    - six
+    - pyinstaller
+
+test:
+  commands:
+    - "${PREFIX}/cpr.exe -h"  # [unix]
+    - "%PREFIX%\\cpr.exe -h"  # [win]
+
+
+about:
+  summary: Entry point repair for moved conda environments
