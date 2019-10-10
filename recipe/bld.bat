@@ -1,7 +1,3 @@
-cd cpr_src
-pip install .
-cd ..
-
 pyinstaller --onefile entry_point.py --name cpr.exe
 MOVE dist\cpr.exe "%PREFIX%\cpr.exe"
 
